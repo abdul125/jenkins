@@ -12,14 +12,14 @@ pipeline {
         }
         
         // stage 2
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying..'
+            }
+        }
+        stage('ValidateStageDeployment') {
+            steps {
+                echo 'validate deployment on staging....'
             }
         }
     }
