@@ -15,8 +15,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-            }
+             }
         }
+        
         stage('ValidateStageDeployment') {
             steps {
                 echo 'validate deployment on staging....'
