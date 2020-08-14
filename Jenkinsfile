@@ -1,18 +1,20 @@
 pipeline {
-    agent Docker
-    options {
-        skipStagesAfterUnstable()
+  agent {
+    docker {
+      image "bryandollery/terraform-packer-aws-alpine"
+      args "-u root --entrypoint=''"
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                'packer build packer.json'
+                echo 'building cre..'
             }
         }
         
         // stage 2
-        stage('Deploy') {
+        stage('') {
             steps {
                 echo 'Deploying..'
              }
